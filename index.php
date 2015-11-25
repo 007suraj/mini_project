@@ -4,6 +4,23 @@
 <meta charset="utf-8">
 <title>Names Selection</title>
 <link type="text/css" rel="stylesheet" href="style.css">
+ <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+        href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+ 
+        <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#name").autocomplete({
+                        source:'search.php',
+                        minLength:1,
+                        limit : 5
+                    });
+                });
+        </script>
+
 </head>
 
 <body>
@@ -17,7 +34,7 @@
 <h1>Search By Name</h1>
 <form  action="" method="POST" >
 <h3>Please enter the name</h3>
-<label>Name:</label><input type="text" name="typeahead"/><br><br>
+<label>Name:</label><input type="text" name="typeahead" id='name'/><br><br>
 <label>Year: </label><input type="text" name="start"/><br>
 
 <h3>Enter your choice for name</h3>
