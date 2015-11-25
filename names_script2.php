@@ -12,6 +12,11 @@ $name=$_POST["typeahead"];
 $gndr=$_POST["gender"];
 //$year=$_POST["year"];
 $strt=$_POST["start"];
+if(($strt>2013)||($strt<1944))
+{
+header("refresh:2;url=names.html");
+echo "<h3>year out of bound ! You will be redireted to main page</h3>";
+}
 $arr=array();
 $host="localhost";
 $user="root";
